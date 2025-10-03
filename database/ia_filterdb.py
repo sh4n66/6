@@ -15,8 +15,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-client = AsyncIOMotorClient(MONGO_URI)
-db = client[MONGO_DB_NAME]
+client = AsyncIOMotorClient(DATABASE_URI)
+db = client[DATABASE_NAME]
 instance = Instance(db)   # ✅ NEW way in umongo 3.x
 
 @instance.register
